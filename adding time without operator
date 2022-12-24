@@ -1,0 +1,46 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+    int hour,min,sec;
+    public:
+    pukar(){};
+    void setdata(){
+    cout<<"Enter the value of hour, min and sec"<<endl;
+    cin>>hour>>min>>sec;
+    }
+    void getdata(){
+        cout<<"Entered values are "<<hour<<" "<<min<<" "<<sec<<endl;
+    }
+    void display(){
+        cout<<"value after addition is "<<hour<<" "<<min<<" "<<sec<<endl;
+    }
+  friend pukar addtime(pukar&p1,pukar&p2);
+};
+pukar addtime(pukar&p1,pukar&p2){
+    pukar p3;
+    p3.hour=p1.hour+p2.hour;
+    p3.min=p1.min+p2.min;
+    p3.sec=p1.sec+p2.sec;
+    
+ 
+    p3.min+=p3.sec/60;
+    p3.hour+=p3.min/60;
+    p3.sec%=60;
+    p3.min%=60;
+    return p3;
+}
+int main() {
+    pukar p1;
+    pukar p2;
+    p1.setdata();
+    p2.setdata();
+    p1.getdata();
+    p2.getdata();
+    pukar p3=addtime(p1,p2);
+    p3.display();
+
+
+
+    return 0;
+}
