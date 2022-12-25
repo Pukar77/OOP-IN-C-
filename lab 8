@@ -1,0 +1,51 @@
+// Write a program defining the class Distance with data member feet and inch as integer. 
+Overload the constructors along with copy constructor. Use the member functions for input and 
+output as well as to compute the sum of the two objects and return the sum. Show read/write 
+operations in main() using above information
+
+
+#include <iostream>
+using namespace std;
+class Distance{
+    int feet,inch;
+    public:
+    Distance(){      //default constructor
+        feet=0;
+        inch=0;
+    }
+    Distance(int x,int y){    //paramitarized constructor
+        feet=x;
+        inch=y;
+    }
+    
+    Distance(Distance &d1){   //copy constructor
+        feet=d1.feet;
+        inch=d1.inch;
+    }
+    void display(){
+        cout<<"The value of feet is "<<feet<<" and the value of inch is "<<inch;
+    }
+    friend Distance add(Distance& d1, Distance& d2);
+    
+};
+
+   Distance add(Distance& d1, Distance& d2){
+    Distance d3;
+    d3.inch=d1.inch+d2.inch;
+    d3.feet=d1.feet+d2.feet;
+    d3.feet+=d3.inch/12;
+    d3.inch=d3.inch%12;
+    return d3;
+    
+}
+int main() {
+    Distance d1(10,20);
+    Distance d2=d1;    //calling copy constructor
+    Distance d3;
+    d3=add(d1,d2);
+    d3.display();
+    
+ 
+
+    return 0;
+}
