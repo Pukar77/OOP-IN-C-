@@ -1,0 +1,46 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+// class compare1;    //forward decleration
+class compare{
+    int x;
+    int y;
+    public:
+    void setdata(){
+    cout<<"Enter the value of x "<<endl;
+    cin>>x;
+    }
+    // friend bool operator == (compare &c1, compare1 &c2);
+    
+   
+    void setdata1(){
+    cout<<"Enter the value of y "<<endl;
+    cin>>y;
+    }
+    friend bool operator==(compare&c1, compare& c2);
+};
+
+bool operator==(compare&c1, compare &c2){
+    if(c1.x==c2.y){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+int main() {
+    compare c1;
+    compare c2;
+    c1.setdata();
+    c2.setdata1();
+    if(c1==c2){
+        cout<<"X and Y are equal"<<endl;
+    }
+    else{
+        cout<<"Not equal";
+    }
+    
+  
+
+    return 0;
+}
