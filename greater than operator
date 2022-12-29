@@ -1,0 +1,44 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+    int x;
+    public:
+    void setdata(){
+        cout<<"Enter the value of x "<<endl;
+        cin>>x;
+    }
+    void display(){
+        cout<<"Value of x is  "<<x<<endl;
+    }
+  friend bool operator>(pukar&p1, pukar&p2);
+};
+bool operator>(pukar&p1, pukar&p2){
+     
+        if(p1.x>p2.x){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+
+int main() {
+    pukar p1;
+    pukar p2;
+    
+    p1.setdata();
+    p1.display();
+    p2.setdata();
+    p2.display();
+    if(p1>p2){
+        cout<<"Object 1 is greater"<<endl;
+    }
+    else{
+        cout<<"Object 2 is greater"<<endl;
+    }
+
+
+    return 0;
+}
