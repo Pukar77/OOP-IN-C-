@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+    int meter, centi;
+    public:
+    pukar(){};
+    pukar(int meter1, int centi1){
+        meter=meter1;
+        centi=centi1;
+    }
+    void display(){
+    cout<<"The value of meter and centimeter is "<<meter<<": "<<centi<<endl;
+    }
+    pukar add(pukar &p2){
+        pukar p3;
+        p3.meter=meter+p2.meter;
+        p3.centi=centi+p2.centi;
+        p3.meter+=p3.centi/100;
+        p3.centi=p3.centi%100;
+        p3.meter=p3.meter%100;
+        return p3;
+    }
+};
+int main() {
+    pukar p1(2,99);
+    pukar p2(3,47);
+   
+pukar p3;
+p3=p1.add(p2);
+
+     
+     p3.display();
+    
+    
+  
+
+    return 0;
+}
