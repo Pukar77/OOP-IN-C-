@@ -1,0 +1,38 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class meal{
+    public:
+    int a;
+  void getdata(){
+      cout<<"Enter the number of people to eat meal "<<endl;
+      cin>>a;
+  }  
+};
+class drink{
+    public:
+    int b;
+    void getdata1(){
+        cout<<"Enter the number of drinks "<<endl;
+        cin>>b;
+    }
+};
+
+class bill:public meal, public drink {
+    public:
+    int c;
+    void display(){
+      c=a*200+b*60;
+    cout<<"Your total bill is "<<c<<endl;
+    }
+  
+    
+};
+int main() {
+    bill b;
+    b.getdata();
+    b.getdata1();
+    b.display();
+
+    return 0;
+}
