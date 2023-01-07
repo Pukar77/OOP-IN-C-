@@ -1,0 +1,40 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class science{
+    public:
+    float s;
+    void display(){
+        cout<<"Enter the marks you obtined in science "<<endl;
+        cin>>s;
+    }
+};
+class math:public science{
+    public:
+    float m;
+    void display1(){
+    cout<<"Enter the marks you obtained in maths "<<endl;
+    cin>>m;
+    }
+};
+class physic:public math{
+    public:
+    int p,q;
+    void display2(){
+    cout<<"Enter the marks obtained in physic "<<endl;
+    cin>>p;
+    }
+    void total(){
+       q=m+s+p;
+       cout<<"Your total marks is "<<q<<endl;
+    }
+};
+int main() {
+    physic p;
+    p.display();
+    p.display1();
+    p.display2();
+    p.total();
+ 
+    return 0;
+}
