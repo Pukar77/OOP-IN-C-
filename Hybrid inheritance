@@ -1,0 +1,34 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+    public:
+    int x;
+};
+class rimal: public pukar{
+    public:
+     rimal(){
+       x=10; 
+    }
+};
+class attulya{
+    public:
+    int y;
+     attulya(){
+        y=14;
+    }
+};
+class utsarga: public rimal, public attulya{
+    public:
+    void sum(){
+        cout<<"Sum is "<<x+y;
+    }
+};
+
+int main() {
+    utsarga uttu;
+    uttu.sum();
+    
+
+    return 0;   // output: Sum is 24
+}
