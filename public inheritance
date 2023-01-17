@@ -1,0 +1,20 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+  public:
+  int x=1;
+};
+class rimal: public pukar{
+    public:
+  void getdata(){
+      cout<<x<<endl;
+  }  
+};
+int main() {
+    rimal o1;
+    o1.getdata();
+
+
+    return 0;
+}
