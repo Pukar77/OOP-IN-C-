@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Pukar {
+public:
+    string str;
+    Pukar(){}
+    Pukar(string s){
+        str=s;
+    }
+    Pukar operator+( Pukar& s1) {
+       
+        Pukar s3;
+        s3.str=str+s1.str;
+        return s3;
+    }
+    void display(){
+        cout<<str;
+    }
+};
+
+int main() {
+    Pukar s1("Hello ");
+    Pukar s2("World!");
+    Pukar s3 = s1 + s2;
+    s3.display();
+    return 0;
+}
