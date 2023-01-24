@@ -10,7 +10,7 @@ class compare{
     cout<<"Enter the value of x "<<endl;
     cin>>x;
     }
-    // friend bool operator == (compare &c1, compare1 &c2);
+    
     
    
     void setdata1(){
