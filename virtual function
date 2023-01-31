@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class pukar{
+    public:
+    virtual void printf(){
+        cout<<"Hello i am pukar "<<endl;
+    }
+    void display(){
+        cout<<"I am a coder"<<endl;
+    }
+    
+};
+class rimal:public pukar{
+    public:
+    void printf(){
+        cout<<"I am rimal "<<endl;
+    }
+    void display(){
+        cout<<"I am graphic designer"<<endl;
+    }
+    
+};
+int main() {
+    pukar *ptr;
+    rimal r;
+    ptr= &r;
+    ptr-> printf();
+    ptr-> display();
+    
+
+    return 0;
+}
