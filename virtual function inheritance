@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class polygen{
+  protected:
+  float side1,side2,side3;
+  public:
+  virtual void getarea()=0;
+  virtual void setdata()=0;
+};
+class rectangle:public polygen{
+    public:
+  void setdata(){
+      cout<<"Enter the length of side1"<<endl;
+      cin>>side1;
+      cout<<"Enter the length of side2"<<endl;
+      cin>>side2;
+  }  
+  void getarea(){
+      side3=side1*side2;
+      cout<<"The area of rectangle is "<<side3<<endl;
+  }
+};
+class square:public polygen{
+  public:
+  void setdata(){
+      cout<<"Enter the length of side"<<endl;
+      cin>>side1;
+  }
+  void getarea(){
+      side2=side1*side1;
+      cout<<"The area of square is "<<side2<<endl;
+  }
+  
+};
+int main() {
+    polygen *ptr;
+    polygen *ptr1;
+    rectangle r;
+    ptr=&r;
+    ptr->setdata();
+    ptr->getarea();
+    square s;
+    ptr1=&s;
+    ptr1->setdata();
+    ptr1->getarea();
+  
+
+    return 0;
+}
