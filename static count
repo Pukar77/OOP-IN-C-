@@ -1,24 +1,18 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
-class MyClass {
-  private:
-    int x;
-    static int count; //static data member
-  public:
-    MyClass(int val) {
-        x = val;
-        count++;
+class pukar{
+    public:
+    pukar(){
+        c++;
     }
-    static int getCount() { //static member function
-        return count;
-    }
+    static int c;
 };
-int MyClass::count = 0; //static data member initialization
-
+int pukar:: c=0;
 int main() {
-    MyClass obj1(10);
-    MyClass obj2(15);
-    MyClass obj3(20);
-    cout << MyClass::getCount(); // Outputs: 3
+pukar p1;
+pukar p2;
+cout<<"The number of object created are "<<pukar::c<<endl;
+
+    return 0;
 }
