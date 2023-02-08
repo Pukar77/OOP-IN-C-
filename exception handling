@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class expection{
+    string exp;
+  public:
+  expection(string exp1){
+      exp=exp1;
+  }
+  string display(){
+      return exp;
+  }
+};
+int main() {
+    int a;
+    cout<<"Enter a number "<<endl;
+    cin>>a;
+    try{
+    if(a<0){
+        throw expection("Negative");
+        cout<<"a"<<endl;
+    }
+    }
+    
+    catch(expection e){
+        cout<<e.display()<<endl;
+    }
+    
+    
+  
+
+    return 0;
+}
