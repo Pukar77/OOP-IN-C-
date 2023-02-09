@@ -1,4 +1,4 @@
-// Online C++ compiler to run C++ program online
+// This is run time polymorphism. In this type of binding the compiler adds code that identifies the object type at runtime then matches the call with the right function definition. This is achieved by using virtual function.
 #include <iostream>
 using namespace std;
 class pukar{
@@ -22,7 +22,7 @@ class rimal:public pukar{
     
 };
 int main() {
-    pukar *ptr;
+    pukar *ptr = new rimal;
     rimal r;
     ptr= &r;
     ptr-> printf();
