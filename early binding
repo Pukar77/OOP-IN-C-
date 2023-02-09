@@ -1,4 +1,7 @@
-// Online C++ compiler to run C++ program online
+// Binding refers to the process of converting identifiers (such as variable and performance names) into addresses. Binding is done for each variable and functions. For functions, it means that matching the call with the right function definition by the compiler. It takes place either at compile time or at runtime.
+// Early Binding (compile-time time polymorphism) As the name indicates, compiler (or linker) directly associate an address to the function call. It replaces the call with a machine language instruction that tells the mainframe to leap to the address of the function.
+
+
 #include <iostream>
 using namespace std;
 class pukar{
@@ -14,7 +17,7 @@ class rimal:public pukar{
     }
 };
 int main() {
-    pukar *ptr;
+    pukar *ptr =new rimal;
     rimal r;
     ptr= &r;
     ptr-> display();
