@@ -1,0 +1,51 @@
+// C++ Pure Virtual Functions
+// Pure virtual functions are used
+
+// if a function doesn't have any use in the base class
+// but the function must be implemented by all its derived classes
+// A class that contains a pure virtual function is known as an abstract class. 
+//This is an example of abstract class but upto line number 16 it is pure virtual class
+#include <iostream>
+using namespace std;
+class rimal{
+    protected:
+      int a,b;
+    public:
+    virtual void getdata()=0;
+    virtual void setdata()=0;
+};
+class pukar:public rimal{
+
+  public:
+  void getdata(){
+      cout<<"Enter the value of a and b"<<endl;
+      cin>>a>>b;
+  }
+  void setdata(){
+      cout<<"Tha value after addition is "<<(a+b)<<endl;
+  }
+};
+class hari: public rimal{
+   public:
+   void getdata(){
+       cout<<"Enter the value of a and b "<<endl;
+       cin>>a>>b;
+   }
+   void setdata(){
+       cout<<"The value after multiplication is "<<(a*b)<<endl;
+   }
+};
+int main() {
+    rimal *ptr;
+    rimal *ptr1;
+    pukar p;
+    ptr=&p;
+    ptr->getdata();
+    ptr->setdata();
+    hari h;
+    ptr1=&h;
+    ptr1->getdata();
+    ptr1->setdata();
+
+    return 0;
+}
