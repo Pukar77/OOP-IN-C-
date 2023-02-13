@@ -1,0 +1,23 @@
+
+#include <iostream>
+using namespace std;
+template<class pukar>
+class rimal{
+    pukar p;
+    public:
+    rimal(pukar z){
+        p=z;
+    }
+    pukar getdata(){
+        return p;
+    }
+};
+int main() {
+    rimal<int>rimalint(5);
+    rimal<double>rimaldouble(5.8);
+    cout<<"The int value is "<<rimalint.getdata()<<endl;
+    cout<<"The float value is "<<rimaldouble.getdata();
+ 
+
+    return 0;
+}
