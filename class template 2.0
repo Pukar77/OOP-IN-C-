@@ -1,0 +1,22 @@
+
+#include <iostream>
+using namespace std;
+template<class pukar>
+class rimal{
+    pukar p1,p2;
+    public:
+    rimal(pukar z, pukar y){
+        p1=z;
+        p2=y;
+    }
+    pukar gedata(){
+        return p1*p2;
+    }
+};
+int main() {
+rimal<double>rimaldouble(10.5,10.4);
+cout<<rimaldouble.gedata();
+
+
+    return 0;
+}
