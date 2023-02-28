@@ -18,7 +18,7 @@ int main() {
     try{
     if(a<0){
         throw expection("Negative");
-        cout<<"a"<<endl;
+        //  cout<<a<<endl;
     }
     }
     
