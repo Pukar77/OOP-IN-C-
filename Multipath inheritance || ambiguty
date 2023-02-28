@@ -1,0 +1,37 @@
+#include <iostream>
+
+class A {
+public:
+    void foo() {
+        std::cout << "foo from A" << std::endl;
+    }
+};
+
+class B : public A {
+public:
+    void foo() {
+        std::cout << "foo from B" << std::endl;
+    }
+};
+
+class C : public A {
+public:
+    void foo() {
+        std::cout << "foo from C" << std::endl;
+    }
+};
+
+class D : public B, public C {
+public:
+    // no foo() function defined in D
+};
+
+int main() {
+    D d;
+    
+    // resolve ambiguity by specifying which version of foo() to call
+    d.B::foo(); // call foo() from B
+    d.C::foo(); // call foo() from C
+
+    return 0;
+}
