@@ -1,0 +1,23 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main(){
+	
+	string name;
+
+ofstream out;
+	out.open("Hell.txt");
+	
+	ifstream in;
+	in.open("HelloMiss.txt");
+	string ln;
+	while(in.eof()==0){
+		getline(in,ln);
+		out<<ln;
+
+	}
+		
+	return 0;
+	
+}
