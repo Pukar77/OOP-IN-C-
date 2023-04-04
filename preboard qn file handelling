@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+    
+    ifstream in("fifa.txt");
+
+    // Initialize variables to keep track of the current maximum number of goals and the name of the player who scored them
+    int max_goals = 0;
+    string max_player;
+
+    // Read in the data from the input file
+    string player_name;
+    int num_goals;
+    while (in >> player_name >> num_goals) {
+        // Check if this player has scored more goals than the current maximum
+        if (num_goals > max_goals) {
+            max_goals = num_goals;
+            max_player = player_name;
+        }
+    }
+
+  
+    cout << "The winner of the golden boot is " << max_player << endl;
+
+    return 0;
+}
