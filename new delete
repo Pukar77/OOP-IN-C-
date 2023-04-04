@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class A{
+    int x;
+    public:
+    void setData(){
+        cout<<"Enter the value of x:";
+        cin>>x;
+    }
+    void display(){
+        cout<<"The value of x is "<< x<<endl;
+    }
+};
+
+int main()
+{
+    int n;
+    cout<<"Enter how many objects you want to create: ";
+    cin>>n;
+    A *ptr=new A[n];
+    for(int i=0; i<n; i++){
+        ptr[i].setData();
+    }
+    for(int i=0; i<n; i++){
+        ptr[i].display();
+    }
+    delete[] ptr;
+    return 0;
+}
