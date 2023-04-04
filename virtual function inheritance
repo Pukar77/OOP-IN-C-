@@ -34,15 +34,15 @@ class square:public polygen{
 };
 int main() {
     polygen *ptr;
-    polygen *ptr1;
+    
     rectangle r;
     ptr=&r;
     ptr->setdata();
     ptr->getarea();
     square s;
-    ptr1=&s;
-    ptr1->setdata();
-    ptr1->getarea();
+    ptr=&s;
+    ptr->setdata();
+    ptr->getarea();
   
 
     return 0;
