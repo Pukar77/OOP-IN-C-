@@ -2,7 +2,7 @@
 using namespace std;
 class Animal{
 public:
-~Animal(){
+virtual ~Animal(){
 cout<<"Parent Destructor"<<endl;
 }
 };
