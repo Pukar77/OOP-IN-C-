@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+  public:
+    int width, height;
+    void set_values(int w, int h) {
+      width = w;
+      height = h;
+    }
+    int area() {
+      return width * height;
+    }
+};
+
+int main() {
+  Rectangle rect;
+  rect.set_values(5, 3);
+  cout << "The area of the rectangle is: " << rect.area() << endl;
+  return 0;
+}
