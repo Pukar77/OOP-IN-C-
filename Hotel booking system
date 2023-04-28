@@ -1,0 +1,414 @@
+
+
+#include <iostream>
+#include<string>
+#include <ctime>
+#include <cstdlib>
+#include <fstream>
+using namespace std;
+class hotel{
+    private:
+    int n,p,q,x,w,id,c,f,z,r;
+    string phone,date,d;
+    string name1,name2;
+    public:
+    void setinfo(void);
+    void choose(void);
+    void choosehotel(void);
+    void info(){
+    	fstream myfile;
+    	myfile.open("Pukar.txt",ios::out);
+    	if(myfile.is_open()){
+		
+            myfile<<"Name of booking-- "<<name1<<endl;
+                myfile<<"Phone number-- "<<phone<<endl;
+                
+                myfile<<"Booked room for date--"<<date<<endl;
+                  myfile<<"Room category--Family room"<<endl;
+                         // Set the time zone to Kathmandu
+  //setenv("TZ", "Asia/Kathmandu", 1);
+  //tzset();
+
+  // Get the current date and time
+  time_t currentTime;
+  time(&currentTime);
+  tm* localTime = localtime(&currentTime);
+
+  // Print the current date and time in Kathmandu
+  myfile << "Booking date : " << localTime->tm_mon+1 << "/" << localTime->tm_mday << "/" << localTime->tm_year+1900 << endl;
+  myfile <<"Boking time : "<< localTime->tm_hour << ":" << localTime->tm_min << ":" << localTime->tm_sec << endl;
+
+    }
+
+}
+     void display(){
+      fourth:
+      cout<<"Enter 1 to pay through e-sewa"<<endl;
+      cout<<"Enter 2 to pay through Khalti"<<endl;
+      cout<<"Enter 3 to pay through e- banking"<<endl;
+      cin>>c;
+      switch(c){
+          case 1:
+          first:
+          cout<<"Enter your e-sewa password "<<endl;
+          cin>>d;
+
+
+          if(d=="pukar"){
+              cout<<"Welcome Back"<<endl;
+             
+                  cout<<"Enter the amount you want to pay"<<endl;
+                  cin>>z;
+                  cout<<"Enter 1 to confirm payement"<<endl;
+                  cout<<"enter 2 to cancel booking"<<endl;
+                  cin>>r;
+                  if(r==1){
+                  cout<<"Congratulation payement successful"<<endl;
+                  cout<<"Your room has been booked successfully"<<endl;
+                
+              }
+              else{
+                  goto fourth;
+              }
+
+          }
+          else{
+              cout<<"Incorrect password"<<endl;
+               goto first;
+               
+          }
+          if(w==z){
+                      cout<<"You payed all amount"<<endl;
+                  }
+                  else if(z>w){
+                      x=z-w;
+                      cout<<"Thank you for your tip of "<<x<<" rupees"<<endl;
+                  }
+                  else{
+                      x=w-z;
+                      cout<<"You have "<<x<<" rupees dew amount"<<endl;
+                  }
+                  break;
+                  case 2:
+          second:
+          cout<<"Enter your khalti password "<<endl;
+          cin>>d;
+
+
+          if(d=="pukar"){
+              cout<<"Welcome Back"<<endl;
+            
+                  cout<<"Enter the amount you want to pay"<<endl;
+                  cin>>z;
+                  cout<<"Enter 1 to confirm payement"<<endl;
+                  cout<<"enter 2 to cancel booking"<<endl;
+                  cin>>r;
+                  if(r==1){
+                  cout<<"Congratulation payement successful"<<endl;
+                  cout<<"Your room has been booked successfully"<<endl;
+             
+              }
+              else{
+                  goto fourth;
+              }
+
+          }
+          else{
+              cout<<"Incorrect password"<<endl;
+               goto second;
+                
+          }
+          if(w==z){
+                      cout<<"You payed all amount"<<endl;
+                  }
+                  else if(z>w){
+                      x=z-w;
+                      cout<<"Thank you for your tip of "<<x<<" rupees"<<endl;
+                  }
+                  else{
+                      x=w-z;
+                      cout<<"You have "<<x<<" rupees dew amount"<<endl;
+                  }
+                  break;
+
+          case 3:
+          third:
+          cout<<"Enter your e-banking password "<<endl;
+          cin>>d;
+
+
+          if(d=="pukar"){
+              cout<<"Welcome Back"<<endl;
+            
+                  cout<<"Enter the amount you want to pay"<<endl;
+                  cin>>z;
+                  cout<<"Enter 1 to confirm payement"<<endl;
+                  cout<<"enter 2 to cancel booking"<<endl;
+                  cin>>r;
+                  if(r==1){
+                  cout<<"Congratulation payement successful"<<endl;
+                  cout<<"Your room has been booked successfully"<<endl;
+                 
+              }
+              else{
+                  goto third;
+              }
+
+          }
+          else{
+              cout<<"Incorrect password"<<endl;
+               goto first;
+                
+          }
+          if(w==z){
+                      cout<<"You payed all amount"<<endl;
+                  }
+                  else if(z>w){
+                      x=z-w;
+                      cout<<"Thank you for your tip of "<<x<<" rupees"<<endl;
+                  }
+                  else{
+                      x=w-z;
+                      cout<<"You have "<<x<<" rupees dew amount"<<endl;
+                  }
+
+
+      }
+     }
+};
+
+void hotel:: choosehotel(){
+    hero:
+
+    cout<<"Welcome to Hotel search.com"<<endl;
+    cout<<endl;
+
+    cout<<"This are the top 5 hotel near you"<<endl;
+    cout<<endl;
+    cout<<"Nepal adventure hotel----press 1 to book it"<<endl;
+
+    cout<<"Hotel skyway----press 2 to book it"<<endl;
+
+    cout<<"Mama bhanja hotel----press 3 to book it"<<endl;
+
+    cout<<"Hotel moonlight----press 4 to book it"<<endl;
+
+    cout<<"Solti hotel----press 5 to book it"<<endl;
+
+    cout<<"Enter the id of the hotel you want to book"<<endl;
+    cin>>id;
+
+    if(id>=6){
+        cout<<"Invalid input"<<endl;
+        goto hero;
+    }
+    switch(id){
+        case 1:
+        cout<<"Welcome to online booking of Nepal adventure hotel"<<endl;
+        break;
+        case 2:
+        cout<<"Welcome to online booking of hotel skyway"<<endl;
+        break;
+          case 3:
+        cout<<"Welcome to online booking of Mama bhanja hotel"<<endl;
+        break;
+          case 4:
+        cout<<"Welcome to online booking of hotel moonlight"<<endl;
+        break;
+          case 5:
+        cout<<"Welcome to online booking of solti hotel"<<endl;
+        break;
+    };
+        	system("CLS");
+
+}
+
+
+
+void hotel:: setinfo(){
+    cout<<"Enter your first name "<<endl;
+    // getline(cin,name1);
+    cin>>name1;
+    cout<<"Enter your last name "<<endl;
+    cin>>name2;
+    cout<<"Enter your phone number"<<endl;
+    cin>>phone;
+     cout<<"Enter the date you want to book the hotel[m/d/y]"<<endl;
+     cin>>date;
+     system("CLS");
+
+}
+
+void hotel::choose(){
+    first:
+
+    cout<<"Enter 1 to choose honeymoon room"<<endl;
+    cout<<"Enter 2 to choose bussiness room"<<endl;
+    cout<<"Enter 3 to choose Delux room"<<endl;
+    cout<<"Enter 4 to choose Family room"<<endl;
+    cin>>n;
+
+
+    switch(n){
+        case 1:
+        cout<<"You choosed honeymoon room"<<endl;
+        cout<<endl;
+        cout<<"Press 1 to get information about honeymoon room"<<endl;
+        cout<<"Press 2 to go back"<<endl;
+        cin>>p;
+        cout<<endl;
+
+        if(p==1){
+            cout<<"It is the room designed for couples. It cost NPR 5000 per night"<<endl;
+            cout<<endl;
+            cout<<"Enter how many days you want to book the room"<<endl;
+            cin>>x;
+            w=5000*x;
+
+            cout<<"press 1 to confirm the booking"<<endl;
+              cout<<"Press 2 to cancel booking"<<endl;
+            cin>>q;
+            system("CLS");
+            if(q==1){
+                cout<<"Your booking will be confirmend after paying the bill"<<endl;
+                cout<<"Total cost--"<<w<<endl;
+            
+            }
+            else{
+                goto first;
+            }
+        }
+
+        else{
+            cout<<"Canceling process"<<endl;
+            goto first;
+        }
+        break;
+   case 2:
+        cout<<"You choosed Business room"<<endl;
+        cout<<endl;
+        cout<<"Press 1 to get information about Bussiness room"<<endl;
+        cout<<"Press 2 to go back"<<endl;
+        cin>>p;
+cout<<endl;
+        if(p==1){
+            cout<<"It is the room designed for having bussiness metting. It cost NPR 6000 per night"<<endl;
+            cout<<endl;
+            cout<<"Enter how many days you want to book the room"<<endl;
+            cin>>x;
+            w=6000*x;
+            cout<<"press 1 to confirm the booking"<<endl;
+              cout<<"Press 2 to cancel booking"<<endl;
+              cout<<endl;
+            cin>>q;
+            system("CLS");
+            if(q==1){
+                cout<<"Your booking will be confirmend after paying the bill"<<endl;
+                cout<<"Total cost--"<<w<<endl;
+              
+            }
+            else{
+                goto first;
+            }
+        }
+
+        else{
+            cout<<"Canceling process"<<endl;
+            goto first;
+
+    }
+    break;
+
+
+  case 3:
+        cout<<"You choosed Delux room"<<endl;
+        cout<<endl;
+        cout<<"Press 1 to get information about Delux room"<<endl;
+        cout<<"Press 2 to go back"<<endl;
+        cin>>p;
+        cout<<endl;
+
+        if(p==1){
+            cout<<"It is the room Full of luxureris. It cost NPR 6500 per night"<<endl;
+            cout<<endl;
+            cout<<"Enter how many days you want to book the room"<<endl;
+            cin>>x;
+            w=6500*x;
+            cout<<"press 1 to confirm the booking"<<endl;
+              cout<<"Press 2 to cancel booking"<<endl;
+            cin>>q;
+            system("CLS");
+            if(q==1){
+                cout<<"Your booking will be confirmend after paying the bill"<<endl;
+                cout<<"Total cost--"<<w<<endl;
+                
+            }
+            else{
+                goto first;
+            }
+        }
+
+        else{
+            cout<<"Canceling process"<<endl;
+            goto first;
+
+    }
+    break;
+     case 4:
+        cout<<"You chose Family room"<<endl;
+        cout<<endl;
+        cout<<"Press 1 to get information about Family room"<<endl;
+        cout<<"Press 2 to go back"<<endl;
+        cin>>p;
+cout<<endl;
+        if(p==1){
+            cout<<"It is the room designed for the family. It cost NPR 4000 per night"<<endl;
+            cout<<endl;
+            cout<<"Enter how many days you want to book the room"<<endl;
+            cin>>x;
+            w=4000*x;
+            cout<<"press 1 to confirm the booking"<<endl;
+            cout<<"Press 2 to cancel booking"<<endl;
+            cin>>q;
+            system("CLS");
+            if(q==1){
+                cout<<"Your booking will be confirmed after paying the bill"<<endl;
+                cout<<"Total cost--"<<w<<endl;
+            
+            }
+            else{
+                goto first;
+            }
+        }
+
+        else{
+            cout<<"Canceling process"<<endl;
+            goto first;
+
+    }
+    break;
+
+}
+
+}
+
+
+int main() {
+
+    hotel pukar;
+    pukar.choosehotel();
+    pukar.setinfo();
+    pukar.choose();
+    cout<<endl;
+    pukar.display();
+    pukar.info();
+
+
+
+
+
+    cout<<"Thank you for choosing us"<<endl;
+
+
+    return 0;
+}
